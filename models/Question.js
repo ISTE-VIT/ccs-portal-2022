@@ -27,6 +27,9 @@ const QuestionSchema = new mongoose.Schema({
             image : {
                 type:String
             },
+            correct : {
+                type:String
+            }
 })
 
 const Question = mongoose.model('Question', QuestionSchema);
