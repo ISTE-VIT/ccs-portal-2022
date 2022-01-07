@@ -94,6 +94,7 @@ const showQuestion = async (index) => {
         const manageCurrentNonAptitudeResponse = () => {
           responsesBody[questionBody.domain].push({
             id: questionBody._id,
+            questi: questionBody.que,
             response: subjectiveAnswer.value,
           })
           console.log(responsesBody)
