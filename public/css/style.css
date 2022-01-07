@@ -1,0 +1,44 @@
+body {
+  font-family: 'Roboto';
+  color: #484a4b !important;
+  background: url('/img/ccsportal_bg.png') !important;
+
+  background-size: auto;
+}
+
+/* .form-group {
+  border: 2px solid #cdcece;
+  border-radius: 10px;
+  opacity: 1;
+  position: relative;
+} */
+
+.form-control {
+  padding-left: 38px;
+}
+
+#icon {
+  padding: 12px;
+  color: white;
+  top: 0px;
+  position: absolute;
+}
+
+.form-check {
+  font: normal normal bold 20px Roboto;
+  letter-spacing: 0px;
+  color: #484a4b;
+  opacity: 1;
+  padding-bottom: 10px;
+}
+h5 {
+  text-align: left;
+  font: normal normal bold 28px Roboto;
+  letter-spacing: 0px;
+  color: #39ade6;
+  opacity: 1;
+}
+
+li {
+  padding-top: 8px;
+}
