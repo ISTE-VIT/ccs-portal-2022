@@ -1,44 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
-  font-family: 'Roboto';
-  color: #484a4b !important;
-  background: url('/img/ccsportal_bg.png') !important;
+  font-family: 'Poppins';
+  background-image: url("/img/bg.png");
 
-  background-size: auto;
 }
 
-/* .form-group {
-  border: 2px solid #cdcece;
-  border-radius: 10px;
-  opacity: 1;
-  position: relative;
-} */
-
-.form-control {
-  padding-left: 38px;
-}
-
-#icon {
-  padding: 12px;
+.signup-head{
   color: white;
-  top: 0px;
+ font-size: 3rem;
+ font-family: 'Poppins';
+font-weight: 600;
+padding-left: 10vw;
+}
+
+.fg label{
+  font-size: 1.4rem;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  margin-right: 20px;
+  text-align: right;
+}
+
+.form-inp {
+   border: none;
+   border-bottom: 2px solid #ffffff;
+    background: transparent;
+    color: white;
+    width: 60%;
+}
+
+.form-inp:focus {
+  outline: none;
+}
+
+select, input[type="checkbox"], input[type="radio"] {
+  -webkit-border-radius:0;
+  -webkit-appearance:none;
+  outline:none;
+}
+
+
+
+input[type=checkbox] + label
+ {
+  position: relative;
+  padding: 0rem 0 0 3rem;
+  user-select: none;
+  color: #fff;
+}
+input[type=checkbox] + label:before,
+input[type=radio] + label:before {
+  content: "";
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 2px solid #ffffff;
+  border-radius: 0.25rem;
+  background: transparent;
+  text-align: center;
+  transition: background 200ms ease-out;
+}
+input[type=checkbox] + label:after,
+input[type=radio] + label:after {
+  content: "";
+  position: absolute;
+  transform: scale(0);
+  transition: transform 200ms ease-out;
 }
 
-.form-check {
-  font: normal normal bold 20px Roboto;
-  letter-spacing: 0px;
-  color: #484a4b;
-  opacity: 1;
-  padding-bottom: 10px;
+input[type=checkbox] + label:after {
+  background-color: transparent;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0.65rem;
+  top: 0.25rem;
+  width: 0.5rem;
+  height: 1rem;
+  opacity: 0.2;
+  border-bottom: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+  transform: rotate(45deg);
+  transition: border-color 0.3s ease;
 }
-h5 {
-  text-align: left;
-  font: normal normal bold 28px Roboto;
-  letter-spacing: 0px;
-  color: #39ade6;
+input[type=checkbox]:checked + label:before {
+  content: "";
+}
+input[type=checkbox]:checked + label:after {
+  content: "";
   opacity: 1;
 }
 
-li {
-  padding-top: 8px;
+.rounded-3 {
+  border-radius: 25px;
+  background: transparent ;
+  color: white;
+  border: 1px solid white;
+  padding: 5px 25px;
+
+}
+
+.rounded-3:hover {
+  background: white;
+  color: black;
+  border: 1px solid white;
+}
+
+@media (max-width: 768px) {
+  .form-inp {
+    width: 100%;
+  }
+
+  .signup-head{
+    font-size: 2rem;
+  }
+
+  .fg label{
+    font-size: 1.2rem;
+  }
+  
 }

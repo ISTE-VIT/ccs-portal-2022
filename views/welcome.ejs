@@ -31,52 +31,65 @@
   #navcustom {
 display:block !important;
   }
+
+  .wave-container {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 150px;
+    z-index: 100;
+    overflow: hidden;
+}
+
+svg {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+
+
 </style>
 </head>
 
 <body >
-  <header id="header"></header>
   <% include ./partials/navbar %>
 
-  <div class="container my-5 text-center">
+  <div class="container text-center" style="margin-top: 8vw;">
     <div class="row justify-content-center align-items-center">
       <div class="col-12 col-lg-7 col-md-7 ">
-        <h1 class="main-heading">Core Committee Selections</h1>
-        <h3 class="text-primary secondary-heading">Dare to be different, dare to be ISTE!</h3>
+        <span class="main-heading">Core Committee Selections</span>
+        <div class="sub-heading"> <span>Get Started</span> </div>
       </div>
-      <div class="col-11 col-lg-4 col-md-5 p-3 mt-2 card shadow-lg login-panel-card">
-          <form method="post" action="/users/login">
-            <% include ./partials/messages %>
-            <div class="card-body">
-                <h3 class="card-title">LOGIN</h3>
-                  <form class="card-text" id="login-form">
-                    <div class="form-group">
-                      <input type="email" name="email" pattern=".+2021.*@vitstudent.ac.in$" class="form-control" id="email"
-                        placeholder="VIT Gmail">
-                      <small id="emailHelp" class="form-text text-muted">Only first year's VIT Gmail is accepted.</small>
-                    </div>
-                    <div class="form-group">
-                      <input type="password" name="pass" minlength="6" required class="form-control" id="password"
-                        placeholder="Password" />
-                    </div>
-                    <button type="submit" class="btn btn-primary ">Login</button>
-                    <div class="d-flex align-items-center my-2">
-                      <div class="flex-grow-1 border-bottom"></div>
-                      <div class="px-2 text-primary">OR</div>
-                      <div class="flex-grow-1 border-bottom"></div>
-                    </div>
-                  </form>
-                  <h3 class="card-title">SIGN UP NOW</h5>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-primary" onclick='window.location.href="/users/register"'>Sign
-                        Up</button>
-                    </p>
-              </div>
-          </form>
-
-      </div>
+     
     </div>
+
+
   </div>
+
+  <!-- <div class="wave-container">
+  
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path id="wave-1" d=""/>
+    </svg>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path id="wave-2" d=""/>
+    </svg>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path id="wave-3" d=""/>
+    </svg>   
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path id="wave-4" d=""/>
+    </svg>  
+      
+  </div> -->
+
+
+
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -88,6 +101,43 @@ display:block !important;
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
 
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85188/jquery.wavify.js"></script>
+
+    <script>
+    $('#wave-1').wavify({
+  height: 40,
+  bones: 3,
+  amplitude: 60,
+  color: '#fff',
+  speed: .25
+});
+
+$('#wave-2').wavify({
+	height: 30,
+	bones: 4,
+	amplitude: 40,
+	color: '#fff',
+	speed: .10
+});
+
+$('#wave-3').wavify({
+	height: 20,
+	bones: 3,
+	amplitude: 40,
+	color: 'rgba(255, 255, 255, .2)',
+	speed: .15
+});
+
+$('#wave-4').wavify({
+	height: 10,
+	bones: 5,
+	amplitude: 40,
+	color: 'rgba(255, 255, 255, .2)',
+	speed: .15
+});
+    </script> -->
 
   
 </body>

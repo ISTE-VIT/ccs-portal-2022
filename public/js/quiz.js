@@ -76,6 +76,8 @@ const showQuestion = async (index) => {
           // console.log(questionBody.domain)
           responsesBody[questionBody.domain].push({
             id: questionBody._id,
+            questi: questionBody.que,
+            correct: questionBody.correct,
             response,
           })
           console.log(responsesBody)
@@ -95,6 +97,7 @@ const showQuestion = async (index) => {
           responsesBody[questionBody.domain].push({
             id: questionBody._id,
             questi: questionBody.que,
+            correct: questionBody.correct,
             response: subjectiveAnswer.value,
           })
           console.log(responsesBody)
