@@ -242,3 +242,9 @@ footer button {
     -webkit-transform: rotate(360deg);
   }
 }
+.tottime{
+  float: right;
+  margin-right: 5%;
+  color: #fff;
+  font-size: 1.2rem;
+}
