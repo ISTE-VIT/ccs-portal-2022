@@ -55,15 +55,10 @@ const showQuestion = async (index) => {
             document.querySelector('.que_image').src = questionBody.image
         }
 
-        optionList.querySelectorAll('.option').forEach((e) =>
-          e.addEventListener('click', () => {
-            deselectOptions()
-            e.querySelector('.option_txt').classList.add('selected')
-          }),
-        )
+        
 
         const interval = setInterval(() => {
-          timerCount.innerHTML = --currentTimerValue
+          timerCount.innerHTML = ": " + --currentTimerValue
         }, 1000)
         const timeout = setTimeout(() => {
           manageCurrentQuestionResponse()
@@ -142,14 +137,15 @@ const finishExam = async () => {
 
 
   const deselectOptions = () => {
-    document
-      .querySelectorAll('.option .selected')
-      .forEach((e) => e.classList.remove('selected'))
+    const selectedOption = document.querySelector('.option input:checked')
+    if (selectedOption) {
+      selectedOption.checked = false
+    }
   }
 
   const getSelectedOption = () => {
-    const selectedOption = document.querySelector('.option .selected')
-    return selectedOption ? selectedOption.innerText.trim() : null
+    const selectedOption = document.querySelector('.option input:checked')
+    return selectedOption ? selectedOption.value : null
   }
 
   window.addEventListener('DOMContentLoaded', () => {})

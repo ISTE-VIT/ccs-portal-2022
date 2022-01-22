@@ -29,8 +29,11 @@ router.get('/questions', ensureAuthenticated,async (req, res) =>{
         const aptitude = await Question.find({
             domain: "aptitude"
         });
-        console.log(aptitude);
-        ques.push(aptitude);
+        const qselc = aptitude.sort(() => Math.random() - Math.random()).slice(0, 4)
+
+        ques.push(qselc);
+        console.log(ques);
+       
         const general = await Question.find({
             domain: "general"
         });
@@ -39,7 +42,9 @@ router.get('/questions', ensureAuthenticated,async (req, res) =>{
             let q = await Question.find({
                 domain: "cse"
             });
-            ques.push(q);
+            const qselc = q.sort(() => Math.random() - Math.random()).slice(0, 4)
+
+            ques.push(qselc);
         }
         if(user.TechnicalElectrical == "on"){
             let q = await Question.find({

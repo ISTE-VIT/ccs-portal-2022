@@ -57,7 +57,7 @@
   <body>
     <header id="header"></header>
     
-    <% include ./partials/navbar %>
+    <% include ./partials/navbar2 %>
 
     <div
       class="quiz_box container col-11 col-lg-8 col-md-10 col-sm-10 justify-content-center mt-4 mb-4"
@@ -79,31 +79,31 @@
         <div class="d-flex justify-content-center">
           <div class="loader"></div>
         </div>
-        <div class="option_list" style="display: none;">
+        <div class="option_list checkboxes fg" style="display: none;">
           <!-- Here I've inserted options from JavaScript -->
-          <div class="option">
-            <span class="option_txt">
-              <img class="option_alph" src="/img/A.png" />
-              <span class="optionA"></span>
-            </span>
+          <div class="option ">
+          <input type="checkbox" value="a" name="myCheckbox" onclick="selectOnlyThis(this)" class="form-check-input" id="optionA"  />
+          <label class="form-check-label optionA" for="optionA">
+            
+          </label>
           </div>
           <div class="option">
-            <span class="option_txt">
-              <img class="option_alph" src="/img/B.png" />
-              <span class="optionB"></span>
-            </span>
+            <input type="checkbox" value="b"  name="myCheckbox" onclick="selectOnlyThis(this)" class="form-check-input" id="optionB"  />
+          <label class="form-check-label optionB" for="optionB">
+            
+          </label>
           </div>
           <div class="option">
-            <span class="option_txt">
-              <img class="option_alph" src="/img/C.png" />
-              <span class="optionC"></span>
-            </span>
+            <input type="checkbox" value="c"  name="myCheckbox" onclick="selectOnlyThis(this)" class="form-check-input" id="optionC"  />
+            <label class="form-check-label optionC" for="optionC">
+              
+            </label>
           </div>
           <div class="option">
-            <span class="option_txt">
-              <img class="option_alph" src="/img/D.png" />
-              <span class="optionD"></span>
-            </span>
+            <input type="checkbox" value="d"  name="myCheckbox" onclick="selectOnlyThis(this)" class="form-check-input" id="optionD"  />
+          <label class="form-check-label optionD" for="optionD">
+            
+          </label>
           </div>
         </div>
       </div>
@@ -123,15 +123,22 @@
 
       <!-- footer of Quiz Box -->
       <footer class="d-flex justify-content-around">
-        <button class="end_button btn btn-red">End Test</button>
-        <button class="next_btn btn btn-primary" style="display: none;">
+        <button class="end_button btn rounded-3"> Submit </button>
+        <button class="next_btn btn rounded-3" style="display: none;">
           Next
         </button>
       </footer>
     </div>
     <script>
     var test = <%- JSON.stringify(questions) %>;
-
+       
+    function selectOnlyThis(id){
+  var myCheckbox = document.getElementsByName("myCheckbox");
+  Array.prototype.forEach.call(myCheckbox,function(el){
+  	el.checked = false;
+  });
+  id.checked = true;
+}
     </script>
 
     <script src="/js/quiz.js"></script>
