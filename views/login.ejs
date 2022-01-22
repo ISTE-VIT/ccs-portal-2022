@@ -26,57 +26,65 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/ccslogin.css" />
+  <link rel="stylesheet" href="/css/style.css" />
 <style>
   #navcustom {
 display:block !important;
   }
+
 </style>
 </head>
 
 <body >
-  <header id="header"></header>
   <% include ./partials/navbar %>
+  <div class="signup-head mt-5 mx-3" >  Login </div>
 
-  <div class="container my-5 text-center">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-12 col-lg-7 col-md-7 ">
-        <h1 class="main-heading">Core Committee Selections</h1>
-        <h3 class="text-primary secondary-heading">Dare to be different, dare to be ISTE!</h3>
+  <div
+  class="container  align-content-center justify-content-center col-12 col-lg-6 col-md-10 col-sm-12 px-5 pt-2 pb-5 "
+>
+ 
+  <br />
+
+  <form id="signup-form"  method="post" autocomplete="off" action="/users/login"  >
+    <% include ./partials/messages %>
+
+    <div class="form-row ">
+      <div class="form-column pl-3 pb-2 mt-5 col-md-12 ">
+        <div class="form-group fg">
+
+            <label for="email"> VIT Mail ID </label>
+            <input type="email" name="email" pattern=".+2021.*@vitstudent.ac.in$" class="form-inp" id="email"
+                        >
+        </div>
+        <div class="form-group fg">
+          <label for="name">Password </label>
+
+          <input type="password" name="pass" minlength="6" required class="form-inp" id="password"
+                         />
+          
+        </div>
       </div>
-      <div class="col-11 col-lg-4 col-md-5 p-3 mt-2 card shadow-lg login-panel-card">
-          <form method="post" action="/users/login">
-            <% include ./partials/messages %>
-            <div class="card-body">
-                <h3 class="card-title">LOGIN</h3>
-                  <form class="card-text" id="login-form">
-                    <div class="form-group">
-                      <input type="email" name="email" pattern=".+2021.*@vitstudent.ac.in$" class="form-control" id="email"
-                        placeholder="VIT Gmail">
-                      <small id="emailHelp" class="form-text text-muted">Only first year's VIT Gmail is accepted.</small>
-                    </div>
-                    <div class="form-group">
-                      <input type="password" name="pass" minlength="6" required class="form-control" id="password"
-                        placeholder="Password" />
-                    </div>
-                    <button type="submit" class="btn btn-primary ">Login</button>
-                    <div class="d-flex align-items-center my-2">
-                      <div class="flex-grow-1 border-bottom"></div>
-                      <div class="px-2 text-primary">OR</div>
-                      <div class="flex-grow-1 border-bottom"></div>
-                    </div>
-                  </form>
-                  <h3 class="card-title">SIGN UP NOW</h5>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-primary" onclick='window.location.href="/users/register"'>Sign
-                        Up</button>
-                    </p>
-              </div>
-          </form>
-
+      <div class="form-column text-center mt-5 pt-3 col-lg-10 col-sm-12">
+        <button
+        type="submit"
+        class="btn rounded-3"
+      >
+        Login
+      </button>
+      <a
+      class="btn rounded-3"
+      href="/users/register"
+      >
+      Sign up
+    </a>
       </div>
     </div>
-  </div>
+  </form>
+</div>
+ 
+
+
+
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -87,8 +95,6 @@ display:block !important;
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-
-
   
 </body>
 
