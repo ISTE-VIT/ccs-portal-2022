@@ -8,6 +8,7 @@
 body {
   font-family: 'Poppins';
   background-image: url("/img/bg.png");
+  overflow-y: hidden;
 
 }
 
@@ -48,7 +49,7 @@ body {
   float: left;
   height: 40px;
   padding: 0px 100px;
-  animation-name: hero-float;  
+  animation-name: hero-float1;  
   animation-duration: 4s;        
   animation-iteration-count: infinite; 
 }
@@ -57,7 +58,7 @@ body {
   float: right;
   height: 40px;
   padding: 0px 100px;
-  animation-name: hero-float;  
+  animation-name: hero-float2;  
   animation-duration: 4s;        
   animation-iteration-count: infinite; 
 }
@@ -65,21 +66,36 @@ body {
 .hero-1 img {
   height: 25rem;
   border-radius: 50%;
-  margin-top: -60px;
+  margin-top: -100px;
+
 }
 
 .hero-2 img {
   height: 25rem;
   border-radius: 50%;
-  margin-top: -60px;
+  margin-top: -120px;
+  padding-right: 40px;
+overflow-y: hidden;
 }
 
-@keyframes hero-float {
+@keyframes hero-float1 {
   0% {
 		transform: translatey(0px);
 	}
 	50% {
 		transform: translatey(20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes hero-float2 {
+  0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
 	}
 	100% {
 		transform: translatey(0px);
@@ -138,3 +154,4 @@ body {
   border-bottom: #1571E3 solid 2px;
   padding: 0px 3px;
 }
+
