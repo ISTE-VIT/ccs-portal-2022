@@ -100,16 +100,16 @@ input[type=checkbox]:checked + label:after {
   border-radius: 25px;
   background: transparent !important;
   color: white !important;
-  border: 1px solid white !important;
+  border: 1px solid #1571E3 !important;
   padding: 5px 25px;
   margin-right: 20px;
 
 }
 
 .rounded-3:hover {
-  background: white !important;
-  color: black !important;
-  border: 1px solid white !important;
+  background: #1571E3 !important;
+  color: rgb(255, 255, 255) !important;
+  border: 1px solid #1571E3 !important;
 }
 
 @media (max-width: 768px) {
