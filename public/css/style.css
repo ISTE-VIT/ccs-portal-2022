@@ -186,6 +186,7 @@ input[type=checkbox]:checked + label:after {
     margin-top: auto;
     padding-right: 40px;
     overflow-y: hidden;
+    margin-left: 70px;
   }
   
 }
@@ -255,4 +256,8 @@ input[type=checkbox]:checked + label:after {
 
 
   
+}
+
+.und {
+  border-bottom: #1571E3 solid 8px;  
 }

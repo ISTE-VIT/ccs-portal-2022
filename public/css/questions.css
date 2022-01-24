@@ -250,3 +250,46 @@ footer button {
   color: #fff;
   font-size: 1.2rem;
 }
+
+.hero-que {
+  float: left;
+  padding: 0px 100px;
+  animation-name: hero-float2;  
+  animation-duration: 4s;        
+  animation-iteration-count: infinite; 
+}
+
+@keyframes hero-float2 {
+  0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.hero-que img {
+  height: 20rem;
+  border-radius: 50%;
+  margin-top: -260px;
+  margin-left: -40px;
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-que {
+    float: none;
+  }
+
+  .hero-que img {
+    height: 15rem;
+    border-radius: 50%;
+    margin-top: auto;
+    padding-right: 40px;
+    overflow-y: hidden;
+  }
+  
+}

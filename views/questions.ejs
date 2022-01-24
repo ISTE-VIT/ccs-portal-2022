@@ -131,6 +131,12 @@
         </button>
       </footer>
     </div>
+
+    <div class="hero-que">
+      <img src="/img/trophy_front.png" alt="" srcset="">
+    </div>
+  
+
     <script>
     var test = <%- JSON.stringify(questions) %>;
        
@@ -142,21 +148,21 @@
   id.checked = true;
 }
 
-$(window).on("blur focus", function(e) {
-    var prevType = $(this).data("prevType");
+// $(window).on("blur focus", function(e) {
+//     var prevType = $(this).data("prevType");
 
-    if (prevType != e.type) {   //  reduce double fire issues
-        switch (e.type) {
-            case "blur":
-                alert("Dont try to exit tab")
-                break;
-            case "focus":
-                break;
-        }
-    }
+//     if (prevType != e.type) {   //  reduce double fire issues
+//         switch (e.type) {
+//             case "blur":
+//                 alert("Dont try to exit tab")
+//                 break;
+//             case "focus":
+//                 break;
+//         }
+//     }
 
-    $(this).data("prevType", e.type);
-})
+//     $(this).data("prevType", e.type);
+// })
     </script>
 
     <script src="/js/quiz.js"></script>
