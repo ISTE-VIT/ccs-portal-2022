@@ -193,7 +193,6 @@ input[type=checkbox]:checked + label:after {
 
 .hero-sign {
   float: right;
-  height: 40px;
   padding: 0px 100px;
   animation-name: hero-float2;  
   animation-duration: 4s;        
@@ -211,7 +210,13 @@ input[type=checkbox]:checked + label:after {
   .hero-sign {
     float: none;
     padding: 0px 65px;
-    display: none;
+  }
+
+  .hero-sign img {
+    height: 15rem;
+    border-radius: 50%;
+    margin-top: auto;
+    overflow-y: hidden;
   }
 
 
