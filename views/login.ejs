@@ -37,6 +37,32 @@ display:block !important;
 
 <body >
   <% include ./partials/navbar %>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a href="https://www.istevit.in" class="navbar-brand" target="_blank">
+      <img id="logo" width="80%" src="/img/main_logo.png" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav ">
+        <li class="nav-item active mx-2">
+          <a class="nav-link px-4 " href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active  mx-2">
+          <a class="nav-link px-4" href="https://www.istevit.in">About Us</a>
+        </li>
+        <li class="nav-item active mx-2">
+          <a class="nav-link round-btn px-4" href="/users/login">Login</a>
+        </li>
+        <li class="nav-item active mx-2">
+          <a class="nav-link round-btn px-4" href="/users/register">Sign Up</a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
   <div class="signup-head mt-5 mx-3" >  Login </div>
 
   <div

@@ -128,3 +128,13 @@ body {
     font-size: 1.2rem;
   }
 }
+
+.und {
+  border-bottom: #1571E3 solid 8px;  
+}
+
+.nav-act{
+  font-weight: 700;
+  border-bottom: #1571E3 solid 2px;
+  padding: 0px 3px;
+}

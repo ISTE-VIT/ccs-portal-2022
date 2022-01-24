@@ -58,11 +58,37 @@ svg {
 
 <body >
   <% include ./partials/navbar %>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a href="https://www.istevit.in" class="navbar-brand" target="_blank">
+      <img id="logo" width="80%" src="/img/main_logo.png" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav ">
+        <li class="nav-item active mx-2">
+          <a class="nav-link px-4 " href="/"> <span class="nav-act">Home</span>  </a>
+        </li>
+        <li class="nav-item active  mx-2">
+          <a class="nav-link px-4" href="https://www.istevit.in">About Us</a>
+        </li>
+        <li class="nav-item active mx-2">
+          <a class="nav-link round-btn px-4" href="/users/login">Login</a>
+        </li>
+        <li class="nav-item active mx-2">
+          <a class="nav-link round-btn px-4" href="/users/register">Sign Up</a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
 
   <div class="container text-center" style="margin-top: 8vw;">
     <div class="row justify-content-center align-items-center">
       <div class="col-12 col-lg-7 col-md-7 ">
-        <span class="main-heading">Core Committee Selections</span>
+        <span class="main-heading"> <span class="und" >C</span>ore Committee Selections</span>
         <a href="/users/login" style="text-decoration: none;"> <div class="sub-heading"> <span>Get Started</span> </div></a>
       </div>
      
