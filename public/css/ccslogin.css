@@ -7,9 +7,9 @@
 
 body {
   font-family: 'Poppins';
-  background-image: url("/img/bg.png");
+  background: radial-gradient(104.93% 104.93% at 48.51% 102.83%, #151515 0%, #000000 100%);
   overflow-y: hidden;
-
+  min-height: 100vh;
 }
 
 .main-heading {

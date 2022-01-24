@@ -2,7 +2,10 @@
 
 body {
   font-family: 'Poppins';
-  background-image: url("/img/bg.png");
+  background: radial-gradient(104.93% 104.93% at 48.51% 102.83%, #151515 0%, #000000 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+ min-height: 100vh;
 
 }
 
@@ -137,7 +140,6 @@ input[type=checkbox]:checked + label:after {
 
 .hero-login {
   float: right;
-  height: 40px;
   padding: 0px 100px;
   animation-name: hero-float2;  
   animation-duration: 4s;        
@@ -185,5 +187,67 @@ input[type=checkbox]:checked + label:after {
     padding-right: 40px;
     overflow-y: hidden;
   }
+  
+}
+
+
+.hero-sign {
+  float: right;
+  height: 40px;
+  padding: 0px 100px;
+  animation-name: hero-float2;  
+  animation-duration: 4s;        
+  animation-iteration-count: infinite; 
+}
+
+.hero-sign img {
+  height: 20rem;
+  border-radius: 50%;
+  margin-top: -460px;
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 980px) {
+  .hero-sign {
+    float: none;
+    padding: 0px 65px;
+    display: none;
+  }
+
+
+  
+}
+
+.hero-inst {
+  float: right;
+  padding: 0px 100px;
+  animation-name: hero-float2;  
+  animation-duration: 4s;        
+  animation-iteration-count: infinite; 
+}
+
+.hero-inst img {
+  height: 20rem;
+  border-radius: 50%;
+  margin-top: -460px;
+  margin-right: -90px;
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 980px) {
+  .hero-inst {
+    float: none;
+    padding: 0px 65px;
+  }
+
+  .hero-inst img {
+    height: 15rem;
+    border-radius: 50%;
+    margin-top: auto;
+    margin-right: auto;
+    overflow-y: hidden;
+  }
+
+
   
 }
