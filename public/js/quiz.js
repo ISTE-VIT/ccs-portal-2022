@@ -100,7 +100,7 @@ const showQuestion = async (index) => {
             'click',
             manageCurrentNonAptitudeResponse,
           )
-         //  showQuestion(index + 1)
+           showQuestion(index + 1)
         }
         nextButton.addEventListener('click', manageCurrentNonAptitudeResponse)
       }
