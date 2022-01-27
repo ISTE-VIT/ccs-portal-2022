@@ -10,6 +10,9 @@ let responsesBody = {
 }
 
 var mergedques = [].concat.apply([], test);
+if(getCookie('responses')){
+  mergedques = JSON.parse(getCookie('responses'))
+}
 console.log(mergedques)
 
 
@@ -66,7 +69,6 @@ const showQuestion = async (index) => {
         const manageCurrentQuestionResponse = () => {
           clearInterval(interval)
           clearTimeout(timeout)
-          console.log(questionBody)
           const response = getSelectedOption()
           // console.log(questionBody.domain)
           responsesBody[questionBody.domain].push({
@@ -75,7 +77,6 @@ const showQuestion = async (index) => {
             correct: questionBody.correct,
             response,
           })
-          console.log(responsesBody)
           deselectOptions()
           nextButton.removeEventListener(
             'click',
@@ -88,6 +89,9 @@ const showQuestion = async (index) => {
         optionList.style.display = 'none'
         subjectiveAnswer.style.display = 'block'
         timerCount.innerText = 'No Time Limit'
+        if(questionBody.response){
+          subjectiveAnswer.value = questionBody.response
+        }
         const manageCurrentNonAptitudeResponse = () => {
           responsesBody[questionBody.domain].push({
             id: questionBody._id,
@@ -95,11 +99,12 @@ const showQuestion = async (index) => {
             correct: questionBody.correct,
             response: subjectiveAnswer.value,
           })
-          console.log(responsesBody)
           nextButton.removeEventListener(
             'click',
             manageCurrentNonAptitudeResponse,
           )
+            mergedques[index].response = subjectiveAnswer.value
+            setCookie('responses',JSON.stringify(mergedques), 1)
            showQuestion(index + 1)
         }
         nextButton.addEventListener('click', manageCurrentNonAptitudeResponse)
@@ -111,6 +116,29 @@ const startTest = () => {
     showQuestion(0)
     document.querySelector('.loader').style.display = 'none'
 
+}
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
 
 startTest()
@@ -160,15 +188,19 @@ const finishExam = async () => {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = minutes + ":" + seconds;
-
+        setCookie('timer',timer, 1)
         if (--timer < 0) {
           finishExam()
         }
     }, 1000);
+    
 }
 
 window.onload = function () {
     var fMinutes = 60 * 45,
         display = document.querySelector('#ttime');
+    if(getCookie('timer')){
+        fMinutes = getCookie('timer')
+    }
     startTimer(fMinutes, display);
 };
