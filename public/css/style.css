@@ -63,7 +63,7 @@ input[type=radio] + label:before {
   width: 1.75rem;
   height: 1.75rem;
   border: 2px solid #ffffff;
-  border-radius: 0.25rem;
+  border-radius: 0.55rem;
   background: transparent;
   text-align: center;
   transition: background 200ms ease-out;
@@ -85,7 +85,7 @@ input[type=checkbox] + label:after {
   top: 0.25rem;
   width: 0.5rem;
   height: 1rem;
-  opacity: 0.2;
+  opacity: 0;
   border-bottom: 3px solid #ffffff;
   border-right: 3px solid #ffffff;
   transform: rotate(45deg);
