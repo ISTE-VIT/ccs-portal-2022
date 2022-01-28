@@ -13,8 +13,14 @@ var mergedques = [].concat.apply([], test);
 if(getCookie('responses')){
   mergedques = JSON.parse(getCookie('responses'))
 }
-console.log(mergedques)
-
+if(getCookie('ans')){
+  responsesBody = JSON.parse(getCookie('ans'))
+  responsesBody.general = []
+  responsesBody.mgm = []
+  responsesBody.des = []
+  responsesBody.cse = []
+  responsesBody.elec = []
+}
 
 const timerCount = document.querySelector('.timer_sec')
 const nextButton = document.querySelector('.next_btn')
@@ -37,13 +43,15 @@ const showQuestion = async (index) => {
       if(index === mergedques.length-1){
         nextButton.style.display = 'none'
         submitButton.style.display = 'block'
-    }
+       }
       currentTimerValue = initialTimeValue
       const questionBody = mergedques[index]
       questionCount.innerHTML = index + 1
       que_text.innerHTML = questionBody.que
       subjectiveAnswer.value = ''
+      
       if (questionBody.domain === 'aptitude') {
+        
         optionList.style.display = 'block'
         subjectiveAnswer.style.display = 'none'
         const optionA = optionList.querySelector('.optionA')
@@ -54,7 +62,7 @@ const showQuestion = async (index) => {
         optionB.innerHTML = questionBody.optionB
         optionC.innerHTML = questionBody.optionC
         optionD.innerHTML = questionBody.optionD
-
+        
         if(questionBody.image){
             document.querySelector('.que_image').style.display = 'block'
             document.querySelector('.que_image').src = questionBody.image
@@ -65,25 +73,38 @@ const showQuestion = async (index) => {
         const interval = setInterval(() => {
           timerCount.innerHTML = ": " + --currentTimerValue
         }, 1000)
+       
         const timeout = setTimeout(() => {
           manageCurrentQuestionResponse()
         }, initialTimeValue * 1000)
+        if(questionBody.attempted){
+          que_text.innerHTML = ' <div style="margin-top:50px" > Already attempted this question.Click on next to attempt next question. </div> '
+          optionList.style.visibility = 'hidden'
+          timerCount.style.visibility = 'hidden'
+        }
         const manageCurrentQuestionResponse = () => {
           clearInterval(interval)
           clearTimeout(timeout)
           const response = getSelectedOption()
-          // console.log(questionBody.domain)
-          responsesBody[questionBody.domain].push({
-            id: questionBody._id,
-            questi: questionBody.que,
-            correct: questionBody.correct,
-            response,
-          })
+          if(response){
+            responsesBody[questionBody.domain].push({
+              id: questionBody._id,
+              questi: questionBody.que,
+              correct: questionBody.correct,
+              response,
+            })
+          }
+             
           deselectOptions()
           nextButton.removeEventListener(
             'click',
             manageCurrentQuestionResponse,
           )
+          console.log(responsesBody)
+          mergedques[index].attempted = true
+          mergedques[index].response = response
+          setCookie('responses',JSON.stringify(mergedques),0.25)
+          setCookie('ans',JSON.stringify(responsesBody), 0.25)
           showQuestion(index + 1)
         }
         nextButton.addEventListener('click', manageCurrentQuestionResponse)
@@ -95,19 +116,24 @@ const showQuestion = async (index) => {
           subjectiveAnswer.value = questionBody.response
         }
         const manageCurrentNonAptitudeResponse = () => {
-          responsesBody[questionBody.domain].push({
-            id: questionBody._id,
-            questi: questionBody.que,
-            correct: questionBody.correct,
-            response: subjectiveAnswer.value,
-          })
+
+              responsesBody[questionBody.domain].push({
+                id: questionBody._id,
+                questi: questionBody.que,
+                response: subjectiveAnswer.value,
+              })
+            
+         
+        
+          
           nextButton.removeEventListener(
             'click',
             manageCurrentNonAptitudeResponse,
           )
             mergedques[index].response = subjectiveAnswer.value
-            setCookie('responses',JSON.stringify(mergedques), 1)
-           showQuestion(index + 1)
+            setCookie('responses',JSON.stringify(mergedques), 0.25)
+            setCookie('ans',JSON.stringify(responsesBody), 0.25)
+            showQuestion(index + 1)
         }
         nextButton.addEventListener('click', manageCurrentNonAptitudeResponse)
       }
