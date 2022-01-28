@@ -21,6 +21,7 @@ const nextButton = document.querySelector('.next_btn')
 const quiz_box = document.querySelector('.quiz_box')
 const que_text = document.querySelector('.que_text')
 const optionList = document.querySelector('.option_list')
+const submitButton = document.querySelector('.end_button')
 const subjectiveAnswer = document.querySelector(
   '.subjective-answer textarea',
 )
@@ -32,9 +33,10 @@ const showQuestion = async (index) => {
       finishExam()
     } else {
       nextButton.style.display = 'block'
+      submitButton.style.display = 'none'
       if(index === mergedques.length-1){
         nextButton.style.display = 'none'
-
+        submitButton.style.display = 'block'
     }
       currentTimerValue = initialTimeValue
       const questionBody = mergedques[index]
@@ -178,29 +180,29 @@ const finishExam = async () => {
 
   window.addEventListener('DOMContentLoaded', () => {})
 
-  function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
+//   function startTimer(duration, display) {
+//     var timer = duration, minutes, seconds;
+//     setInterval(function () {
+//         minutes = parseInt(timer / 60, 10);
+//         seconds = parseInt(timer % 60, 10);
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+//         minutes = minutes < 10 ? "0" + minutes : minutes;
+//         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
-        setCookie('timer',timer, 1)
-        if (--timer < 0) {
-          finishExam()
-        }
-    }, 1000);
+//         display.textContent = minutes + ":" + seconds;
+//         setCookie('timer',timer, 1)
+//         if (--timer < 0) {
+//           finishExam()
+//         }
+//     }, 1000);
     
-}
+// }
 
-window.onload = function () {
-    var fMinutes = 60 * 45,
-        display = document.querySelector('#ttime');
-    if(getCookie('timer')){
-        fMinutes = getCookie('timer')
-    }
-    startTimer(fMinutes, display);
-};
+// window.onload = function () {
+//     var fMinutes = 60 * 45,
+//         display = document.querySelector('#ttime');
+//     if(getCookie('timer')){
+//         fMinutes = getCookie('timer')
+//     }
+//     startTimer(fMinutes, display);
+// };
