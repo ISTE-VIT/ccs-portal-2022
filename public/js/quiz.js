@@ -180,7 +180,7 @@ const finishExam = async () => {
         data:responsesBody,   
         success: function () {
         console.log(responsesBody);
-        window.location.href = "/";    
+        window.location.href = "/thankyou";    
         }
       });
   }
