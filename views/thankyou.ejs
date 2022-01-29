@@ -1,12 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISTE CCS</title>
+  <meta charset="utf-8">
+  <title>CCS || ISTE-VIT</title>
+  <link rel="icon" type="image/png" href="/img/icon/Iste-icon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="description" content="ISTE-VIT, VIT Vellore, Vellore, Tamil Nadu, India. 632014" />
+  <meta name="keywords"
+    content="ISTE, iste, ISTE VIT, ISTE-VIT, vit, VIT, VIT-Vellore, Vit, Iste, Vellore, Student, Chapter, Club, club, CLUB, CHAPTER, chapter, Education, India, Indian, Society, Indian Society For Technical Education">
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ISTE-VIT" />
+  <meta property="og:description" content="ISTE-VIT. Dare to be different. Dare to be ISTE." />
+  <meta property="og:url" content="index.html" />
+  <meta property="og:site_name" content="ISTE-VIT" />
+  <meta name="keywords"
+    content="ISTE, iste, ISTE VIT, ISTE-VIT, vit, VIT, VIT-Vellore, Vit, Iste, Vellore, Student, Chapter, Club, club, CLUB, CHAPTER, chapter, Education, India, Indian, Society, Indian Society For Technical Education">
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/ccslogin.css" />
+<style>
+  #navcustom {
+display:block !important;
+  }
+
+  .wave-container {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 150px;
+    z-index: 100;
+    overflow: hidden;
+}
+
+svg {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+
+
+</style>
 </head>
-<body>
-    <h1>Thank you for registering</h1>
+
+<body >
+  <% include ./partials/navbar %>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a href="/" class="navbar-brand" >
+      <img id="logo" width="80%" src="/img/main_logo.png" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav ">
+        <li class="nav-item active  mx-2">
+          <a class="nav-link px-4" target="_blank" href="https://www.istevit.in">About Us</a>
+        </li>
+        <li class="nav-item active mx-2">
+          <a class="nav-link round-btn px-4" href="/users/login">Login</a>
+        </li>
+        <li class="nav-item active mx-2">
+          <a class="nav-link round-btn px-4" href="/users/register">Sign Up</a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
+
+  <div class="container text-center" >
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-lg-7 col-md-7 mt-1">
+        <span class="main-heading"> <span class="und" >T</span>hank you for registering</span>
+        <div class="thankyouhead" >Stay tuned to our social media handles for further updates.</div>
+        <div>
+            <div>
+               <a href="https://instagram.com/iste_vit_vellore" target="_blank" rel="noopener noreferrer"> <img src="/img/Instagram.png" class="social-icons" alt="" srcset=""></a>
+               <a href="https://www.facebook.com/ISTE.VIT" target="_blank" rel="noopener noreferrer">                <img src="/img/Facebook.png" class="social-icons" alt="" srcset="">
+               </a>
+
+            </div>
+     
+        </div>
+
+      </div>
+      <div class="contact col-lg-6 mt-3">
+        <div class="mb-1" style="font-weight: 500;font-size: 1.2rem;">For Queries Contact :</div>
+        <div style="text-align: left;" >
+            <div class="cont" > <img src="/img/Whatsapp.png" class="social-icons2" alt="" srcset="">Ved Purohit - +91 8971754974</div>
+            <div class="cont"><img src="/img/Whatsapp.png" class="social-icons2" alt="" srcset="">Aman Ali Siddiqui - +91 7704004066</div>   
+            <div class="cont"> <img src="/img/Whatsapp.png" class="social-icons2" alt="" srcset="">Khusboo Niljhawan - +91 7838976793
+            </div> 
+      
+        </div>
+     
+    </div>
+    </div>
+
+
+  </div>
+
+  <!-- <div class="hero-1">
+    <img src="/img/megaphone_front.png" class="mega" alt="" srcset="">
+  </div>
+
+  <div class="hero-2">
+    <img src="/img/gear_front.png" class="mega" alt="" srcset="">
+  </div> -->
+
+  <!-- <div class="wave-container">
+  
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path id="wave-1" d=""/>
+    </svg>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path id="wave-2" d=""/>
+    </svg>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path id="wave-3" d=""/>
+    </svg>   
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path id="wave-4" d=""/>
+    </svg>  
+      
+  </div> -->
+
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85188/jquery.wavify.js"></script>
+
+    <script>
+    $('#wave-1').wavify({
+  height: 40,
+  bones: 3,
+  amplitude: 60,
+  color: '#fff',
+  speed: .25
+});
+
+$('#wave-2').wavify({
+	height: 30,
+	bones: 4,
+	amplitude: 40,
+	color: '#fff',
+	speed: .10
+});
+
+$('#wave-3').wavify({
+	height: 20,
+	bones: 3,
+	amplitude: 40,
+	color: 'rgba(255, 255, 255, .2)',
+	speed: .15
+});
+
+$('#wave-4').wavify({
+	height: 10,
+	bones: 5,
+	amplitude: 40,
+	color: 'rgba(255, 255, 255, .2)',
+	speed: .15
+});
+    </script> -->
+
+  
 </body>
+
 </html>

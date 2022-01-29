@@ -78,7 +78,8 @@ const showQuestion = async (index) => {
           manageCurrentQuestionResponse()
         }, initialTimeValue * 1000)
         if(questionBody.attempted){
-          que_text.innerHTML = ' <div style="margin-top:50px" > Already attempted this question.Click on next to attempt next question. </div> '
+          que_text.innerHTML += ' <div style="margin-top:50px" >You have already attempted this question.Click on next to attempt next question. </div> '
+          optionList.style.height = '100px'
           optionList.style.visibility = 'hidden'
           timerCount.style.visibility = 'hidden'
         }
