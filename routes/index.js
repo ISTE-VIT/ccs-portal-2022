@@ -42,7 +42,7 @@ router.get('/questions', ensureAuthenticated,async (req, res) =>{
             let q = await Question.find({
                 domain: "cse"
             });
-            const qselc = q.sort(() => Math.random() - Math.random()).slice(0, 4)
+            const qselc = q.sort(() => Math.random() - Math.random()).slice(0, 10)
 
             ques.push(qselc);
         }
