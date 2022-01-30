@@ -23,16 +23,14 @@ router.get('/questions', ensureAuthenticated,async (req, res) =>{
         email: req.user.email
     })
 
-    console.log(user)
     if(user.responsee.length == 0){
         let ques = [];
         const aptitude = await Question.find({
             domain: "aptitude"
         });
-        const qselc = aptitude.sort(() => Math.random() - Math.random()).slice(0, 4)
+        const qselc = aptitude.sort(() => Math.random() - Math.random()).slice(0, 10)
 
         ques.push(qselc);
-        console.log(ques);
        
         const general = await Question.find({
             domain: "general"
@@ -42,9 +40,8 @@ router.get('/questions', ensureAuthenticated,async (req, res) =>{
             let q = await Question.find({
                 domain: "cse"
             });
-            const qselc = q.sort(() => Math.random() - Math.random()).slice(0, 10)
 
-            ques.push(qselc);
+            ques.push(q);
         }
         if(user.TechnicalElectrical == "on"){
             let q = await Question.find({

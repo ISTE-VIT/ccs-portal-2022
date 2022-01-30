@@ -10,11 +10,11 @@ let responsesBody = {
 }
 
 var mergedques = [].concat.apply([], test);
-if(getCookie('responses')){
-  mergedques = JSON.parse(getCookie('responses'))
+if(sessionStorage.getItem("responses")){
+  mergedques = JSON.parse(sessionStorage.getItem("responses"))
 }
-if(getCookie('ans')){
-  responsesBody = JSON.parse(getCookie('ans'))
+if(sessionStorage.getItem("ans")){
+  responsesBody = JSON.parse(sessionStorage.getItem("ans"))
   responsesBody.general = []
   responsesBody.mgm = []
   responsesBody.des = []
@@ -78,10 +78,14 @@ const showQuestion = async (index) => {
           manageCurrentQuestionResponse()
         }, initialTimeValue * 1000)
         if(questionBody.attempted){
-          que_text.innerHTML += ' <div style="margin-top:50px" >You have already attempted this question.Click on next to attempt next question. </div> '
+          que_text.innerHTML += ' <div style="margin-top:50px;color:#1571E3" >You have already attempted this question.Click on next to attempt next question. </div> '
           optionList.style.height = '100px'
           optionList.style.visibility = 'hidden'
           timerCount.style.visibility = 'hidden'
+        } else {
+          optionList.style.height = 'auto'
+          optionList.style.visibility = 'visible'
+          timerCount.style.visibility = 'visible'
         }
         const manageCurrentQuestionResponse = () => {
           clearInterval(interval)
@@ -101,11 +105,10 @@ const showQuestion = async (index) => {
             'click',
             manageCurrentQuestionResponse,
           )
-          console.log(responsesBody)
           mergedques[index].attempted = true
           mergedques[index].response = response
-          setCookie('responses',JSON.stringify(mergedques),0.25)
-          setCookie('ans',JSON.stringify(responsesBody), 0.25)
+          sessionStorage.setItem("responses", JSON.stringify(mergedques))
+          sessionStorage.setItem("ans", JSON.stringify(responsesBody))
           showQuestion(index + 1)
         }
         nextButton.addEventListener('click', manageCurrentQuestionResponse)
@@ -132,8 +135,8 @@ const showQuestion = async (index) => {
             manageCurrentNonAptitudeResponse,
           )
             mergedques[index].response = subjectiveAnswer.value
-            setCookie('responses',JSON.stringify(mergedques), 0.25)
-            setCookie('ans',JSON.stringify(responsesBody), 0.25)
+            sessionStorage.setItem("responses", JSON.stringify(mergedques))
+            sessionStorage.setItem("ans", JSON.stringify(responsesBody))
             showQuestion(index + 1)
         }
         nextButton.addEventListener('click', manageCurrentNonAptitudeResponse)
@@ -147,28 +150,7 @@ const startTest = () => {
 
 }
 
-function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
 
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
 
 startTest()
 
