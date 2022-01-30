@@ -100,6 +100,10 @@ router.get("/thankyou", (req, res) => {
     res.render("thankyou");
 });
 
+router.get("/contact", (req, res) => {
+    res.render("contact");
+});
+
    
 router.post("/thankyou", async (req, res) => {
     let data = req.body;
