@@ -252,7 +252,7 @@ footer button {
 }
 
 .hero-que {
-  float: left;
+  float: right;
   padding: 0px 100px;
   animation-name: hero-float2;  
   animation-duration: 4s;        
@@ -274,7 +274,7 @@ footer button {
 .hero-que img {
   height: 20rem;
   border-radius: 50%;
-  margin-top: -260px;
+  margin-top: -280px;
   margin-left: -40px;
   overflow-y: hidden;
 }
