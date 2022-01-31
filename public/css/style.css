@@ -54,6 +54,17 @@ input[type=checkbox] + label
   user-select: none;
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  input[type=checkbox] + label
+ {
+   margin: 5px 2px;
+}
+}
+  
+
+
+
 input[type=checkbox] + label:before,
 input[type=radio] + label:before {
   content: "";
