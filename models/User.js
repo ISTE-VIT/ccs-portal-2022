@@ -41,6 +41,9 @@ const UserSchema = new mongoose.Schema({
     responsee : {
         type: Array,
         default: []
+    },
+    updatedTime: {
+        type: Date,
     }
 })
 

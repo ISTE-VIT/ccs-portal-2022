@@ -5,6 +5,7 @@ const {
 } = require('../config/auth');
 const User = require('../models/User');
 const Question = require('../models/Question');
+const { update } = require('../models/User');
 
 //  Welcome
 router.get('/', (req, res) => res.render('welcome'));
@@ -59,9 +60,8 @@ router.get('/questions', ensureAuthenticated,async (req, res) =>{
             let q = await Question.find({
                 domain: "des"
             });
-           const qselc = q.sort(() => Math.random() - Math.random()).slice(0, 4)
 
-            ques.push(qselc);
+            ques.push(q);
         }
 
         res.render('questions', {
@@ -115,7 +115,8 @@ router.post("/thankyou", async (req, res) => {
     
     user.updateOne({
         $set: {
-            responsee: data
+            responsee: data,
+            updatedTime: Date.now()
         }
     })
     .catch(

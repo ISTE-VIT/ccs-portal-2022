@@ -32,6 +32,7 @@ const subjectiveAnswer = document.querySelector(
   '.subjective-answer textarea',
 )
 const questionCount = document.querySelector('.question .question-count')
+const submitNote = document.querySelector('.submit-note')
 
 const showQuestion = async (index) => {
    
@@ -43,6 +44,7 @@ const showQuestion = async (index) => {
       if(index === mergedques.length-1){
         nextButton.style.display = 'none'
         submitButton.style.display = 'block'
+        submitNote.style.display = 'block'
        }
       currentTimerValue = initialTimeValue
       const questionBody = mergedques[index]
